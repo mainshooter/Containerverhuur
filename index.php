@@ -33,6 +33,10 @@
     echo "Het kost: &euro;" . $result;
   }
 
+  /**
+   * Calculates the price for all the days and the content of the container
+   * @return [int] [The price they need to pay]
+   */
   function calculatePriceForAllDays() {
     return(intval(getDays()) * 40 * intval(getContainerContent()));
   }
@@ -52,8 +56,8 @@
   }
 
   /**
-   * Gets the amount
-   * @return [type] [description]
+   * Gets the amount how the container
+   * @return [int] [The content of the container]
    */
   function getContainerContent() {
     global $containerContent;
@@ -62,9 +66,11 @@
     return($containerContent);
   }
 
+  /**
+   * Gets how many dates there are between the 2 dates
+   * @return [int] [description]
+   */
   function getDays() {
-    global $days;
-
     $startDate = $_POST['startDate'];
     $startDate = date($startDate);
 
